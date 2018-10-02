@@ -6,8 +6,10 @@ from flask import request
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    rendered = render_template('home.html')
+@app.route('/index')
+@app.route('/index.html')
+def index():
+    rendered = render_template('index.html')
     return rendered
 
 
