@@ -1,6 +1,6 @@
 from werkzeug.wrappers import Request, Response
 from flask import Flask
-from flask import render_template
+from flask import render_template, send_from_directory
 from flask import request
 
 app = Flask(__name__)
@@ -12,6 +12,9 @@ def index():
     rendered = render_template('index.html')
     return rendered
 
+@app.route('/<path:path>')
+def sendFiles(path):
+    return send_from_directory('.', path)
 
 @app.route("/result", methods=['POST'])
 def result():
