@@ -64,36 +64,36 @@ def save_assets(html_text):
     save(bs=bs, element="link", check=".css")
     save(bs=bs, element="script", check=".js")
 
-    links = bs.find_all("img")
-    for l in links:
-        href = l.get("src")
-        if href is not None and href not in visited_links:
-            print("Working with : {}".format(href))
-            if "//" in href:
-                path_s = href.split("/")
-                file_name = ""
-                for i in range(3, len(path_s)):
-                    file_name = file_name + "/" + path_s[i]
-            else:
-                file_name = href
+    # links = bs.find_all("img")
+    # for l in links:
+    #     href = l.get("src")
+    #     if href is not None and href not in visited_links:
+    #         print("Working with : {}".format(href))
+    #         if "//" in href:
+    #             path_s = href.split("/")
+    #             file_name = ""
+    #             for i in range(3, len(path_s)):
+    #                 file_name = file_name + "/" + path_s[i]
+    #         else:
+    #             file_name = href
 
-            l = site_name + file_name
+    #         l = site_name + file_name
 
-            try:
-                r = requests.get(l, stream=True)
-            except requests.exceptions.ConnectionError:
-                error_links.append(l)
-                continue
+    #         try:
+    #             r = requests.get(l, stream=True)
+    #         except requests.exceptions.ConnectionError:
+    #             error_links.append(l)
+    #             continue
 
-            if r.status_code != 200:
-                error_links.append(l)
-                continue
+    #         if r.status_code != 200:
+    #             error_links.append(l)
+    #             continue
 
-            os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
-            with open(project_path + file_name.split("?")[0], "wb") as f:
-                shutil.copyfileobj(r.raw, f)
+    #         os.makedirs(os.path.dirname(project_path + file_name.split("?")[0]), exist_ok=True)
+    #         with open(project_path + file_name.split("?")[0], "wb") as f:
+    #             shutil.copyfileobj(r.raw, f)
 
-            visited_links.append(l)
+    #         visited_links.append(l)
 
 
 def crawl(link):
