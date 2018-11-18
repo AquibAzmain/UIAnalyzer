@@ -10,11 +10,11 @@ chrome_options.add_argument("--headless")
 
 driver = webdriver.Chrome(executable_path='./chromedriver.exe', chrome_options=chrome_options)
 
-driver.get('http://www.google.com/')
+driver.get('http://www.youtube.com/')
 time.sleep(1)
 
 
-driver.save_screenshot('shot.png')
+driver.save_screenshot('shot2.png')
 
 # html = driver.page_source
 html = driver.execute_script("return document.body.innerHTML")

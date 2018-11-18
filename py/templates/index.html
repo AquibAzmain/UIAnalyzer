@@ -37,14 +37,13 @@
           <div class="col-12 my-auto">
             <div class="masthead-content text-white py-5 py-md-0">
               <h1 class="mb-3">UIAnalyzer</h1>
-              <p class="mb-5">This tool will find usability smells from the user interface of a web application and decide whether the web interface follows standard user interface pattern or not.</p>
+              <p class="mb-5">It will find you the usability smells of a web application. Just enter the url..</p>
               <div class="input-group input-group-newsletter">
                 <form class="form-inline" action="{{ url_for('result') }}" method="post">
-                <input type="text" name="search_key" class="form-control" placeholder="Enter website URL..." aria-label="Enter website URL..." aria-describedby="basic-addon">
-              
-                <div class="input-group-append">
-                  <input class="btn btn-secondary" type="submit" value="Enter">
-                </div>
+                  <input style="width:300px" type="text" name="search_key" class="form-control" placeholder="Enter website URL..." aria-label="Enter website URL..." aria-describedby="basic-addon">              
+                  <div class="input-group-append">
+                    <input class="btn btn-secondary" type="submit" value="Enter">
+                  </div>
               </form>
               </div>
             </div>
