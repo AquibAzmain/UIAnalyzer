@@ -1,0 +1,486 @@
+
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<!--importnt for device responsive design-->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#4285f4">
+	<meta name="msapplication-navbutton-color" content="#4285f4">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
+    <title>Humans of Thakurgaon</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="materialize/css/materialize.min.css">
+	<link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="bootstrap-datepicker/1.5.1/css/bootstrap-datepicker3.css"/> -->
+	<!--JAVASCRIPT script tags are located below-->
+	<!--JAVASCRIPT script tags are located below-->
+	<!--to defer the js parsing-->
+	<!--to defer the js parsing-->
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script src="materialize/js/materialize.min.js"></script>
+	<!-- <script type="text/javascript" src="bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
+	<script>
+		$(function() {
+			$( "#date" ).datepicker({
+				format: 'MM dd, yyyy',
+				todayHighlight: true,
+				autoclose: true,
+			});
+		});
+	</script> -->
+	<style>
+		@font-face {
+			font-family: MyAdorshoLipi;
+			src: url(fonts/AdorshoLipi.ttf);
+		}
+		@font-face {
+			font-family: MyLato;
+			src: url(fonts/Lato-Regular.ttf);
+		}
+	</style>	
+	
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="favicon.png">
+	
+</head>
+<body>
+
+
+<!--
+   Copyright 2018 Team Humans of Thakurgaon
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+    <!-- fb messenger plugin -->
+    <!-- Load Facebook SDK for JavaScript -->
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="1792621644303559"
+      logged_in_greeting="শুভেচ্ছা নিবেন। কীভাবে আপনাকে সাহায্য করতে পারি জানাবেন? :)"
+      logged_out_greeting="শুভেচ্ছা নিবেন। কীভাবে আপনাকে সাহায্য করতে পারি জানাবেন? :)">
+    </div>
+    <!-- fb messenger plugin -->
+		
+    <!--js for collapse is located last of this document to defer the parsing-->
+		<!--js for collapse is located last of this document to defer the parsing-->
+	<script>
+		$(document).ready(function(){
+			$(".button-collapse").sideNav();
+		});
+		
+		$(document).ready(function(){
+			$('.modal-trigger').leanModal({
+			  dismissible: false, // Modal can be dismissed by clicking outside of the modal
+			  opacity: .7, // Opacity of modal background
+			  in_duration: 300,
+			  out_duration: 100
+			}
+		  );
+		});
+	</script>
+		
+		<div class="navbar-fixed">
+		<nav role="navigation" class="blue lighten-3">
+			<div class="container">
+			<div class="nav-wrapper ">
+			  <a href="#!" class="brand-logo right hide-on-med-and-down">Humans of Thakurgaon</a>
+			  <a href="#!" class="brand-logo center hide-on-large-only"><span style="font-size: 20px;">Humans of Thakurgaon</span></a>
+			  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			  <ul class="left hide-on-med-and-down">
+				<li><a href="index.php"><i class="material-icons left">library_books</i>Stories</a></li>
+				<li>
+					<a class="waves-effect waves-light modal-trigger" href="#modalSearchPC"><i class="material-icons left">search</i>Search</a>
+				</li>
+				<li><a href="about.php"><i class="material-icons left">info_outline</i>About</a></li>
+				<li><a href="http://blog.humansofthakurgaon.org/"><i class="material-icons left">mode_edit</i>Blog</a></li>
+				<li><a href="https://goo.gl/forms/AGcuUxxTmN5eBROk1" target="_blank"><i class="material-icons left">group_add</i>Join us</a></li>
+			  </ul>
+			  <ul class="side-nav" id="mobile-demo">
+				<li>
+					<div class="mob_tab_banner_container center">
+						<img class="responsive-img" src="cloned_siteimages/mob_tab_banner.jpg">
+						<div class="mob_tab_banner_text center" style="font-family: Times New Roman, Times, serif !important;">
+							<span class="mob_tab_banner_text_main">Humans of Thakurgaon<span>
+						</div>
+					</div>
+				</li>
+				<li><a href="index.php"><i class="material-icons left">library_books</i>Stories</a></li>
+				<li>
+					<a class="waves-effect waves-light modal-trigger" href="#modalSearchPC"><i class="material-icons left">search</i>Search</a>
+				</li>
+				<li><a href="about.php"><i class="material-icons left">info_outline</i>About</a></li>
+				<li><a class="modal-trigger" href="#floatMessage"><i class="material-icons left">email</i>Contact</a></li>
+				<li><a href="http://blog.humansofthakurgaon.org/"><i class="material-icons left">mode_edit</i>Blog</a></li>
+				<li><a href="https://goo.gl/forms/AGcuUxxTmN5eBROk1" target="_blank"><i class="material-icons left">group_add</i>Join us</a></li>
+				<li><a href="terms.php"><i class="material-icons left">verified_user</i>Terms of Service</a></li>
+				<li><a href="privacy.php"><i class="material-icons left">lock</i>Privacy Policy</a></li>
+			  </ul>
+			</div>
+			</div>
+		</nav>
+		</div>
+		
+		
+<!--floating button code-->
+<!--floating button code-->
+  <!-- <div class="fixed-action-btn" id="floating_button" style="bottom: 45px; left: 24px;">
+    <a class="btn-floating btn-large waves-effect waves-light modal-trigger blue" href="#floatMessage">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+  </div> -->
+  
+	<!-- Modal Search Input PC-->
+	<div id="modalSearchPC" class="modal">
+		<div class="modal-content">
+			<h4>Search Input</h4>
+			<form class="col s12 m12" method="GET" action="search.php">
+			  <div class="row">
+				<div class="input-field col s12">
+				  <input id="searchInputString" type="text" name="searchInputString" class="validate" required>
+				  <label for="searchInputString">Search Input</label>
+				</div>
+				<div class="input-field col s12">
+					<button class="btn waves-effect waves-purple white" type="submit" name="searchBtn" value="true">
+						<span style="color:black;"><i class="material-icons left">search</i>
+						Search Now!</span>
+					</button>
+				</div>
+			  </div>
+			</form>  
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+  
+
+  <!-- Modal Structure -->
+  <div id="floatMessage" class="modal">
+    <div class="modal-content">
+	  <a href="#!" class="modal-action modal-close waves-effect waves-light  right">
+		<i class="material-icons right">close</i>
+	  </a>	
+      <h5><i class="material-icons">comment</i> Feedback</h5>
+       <div class="row">
+			<form class="col s12 m12" method="post" action="">
+			  <div class="row">
+				<div class="input-field col s12">
+				  <input id="icon_prefix" type="text" name="senderName" class="validate" required>
+				  <label for="icon_prefix">Name</label>
+				</div>
+				<div class="input-field col s12">
+				  <input id="email" type="email" name="senderEmail" class="validate" required>
+				  <label for="email" data-error="wrong" data-success="right">Email</label>
+				</div>
+				<div class="input-field col s12">
+				  <textarea id="textarea1" class="materialize-textarea" name="mailMessege" type="text" required></textarea>
+				  <label for="textarea1">Messege</label>
+				</div>
+								<div class="input-field col s12">
+				  <input id="captchaResult" type="text" name="captchaResult" class="validate" required>
+				  <label for="captchaResult" data-error="wrong" data-success="right">
+				  	What is the sum of <b>4</b> and <b>4</b>?
+				  </label>
+
+				  <input name="firstNumber" type="hidden" value="4" />
+				  <input name="secondNumber" type="hidden" value="4" />
+				</div>
+				<div class="input-field col s12">
+					<button class="btn waves-effect waves-purple white" type="submit" name="sendMail">
+						<span style="color:black;"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+						Send Message</span>
+					</button>
+				</div>
+			  </div>
+			</form>
+					  </div>
+    </div>
+  </div>
+<!--floating button code-->
+<!--floating button code-->
+
+
+
+
+	<!--css for scrollbar-->
+	<!--css for scrollbar-->
+	<!--css for scrollbar-->
+	<div class="right hide-on-med-and-down">
+	<style>
+		::-webkit-scrollbar {
+		  width: 9px;
+		  height: 9px;
+		}
+		::-webkit-scrollbar-button {
+		  width: 3px;
+		  height: 3px;
+		}
+		::-webkit-scrollbar-thumb {
+		  background: #857bf9;
+		  border: 43px none #f7f7f7;
+		  border-radius: 50px;
+		}
+		::-webkit-scrollbar-thumb:hover {
+		  background: #a899f9;
+		}
+		::-webkit-scrollbar-thumb:active {
+		  background: #6262f2;
+		}
+		::-webkit-scrollbar-track {
+		  background: #666666;
+		  border: 8px solid #e9eafe;
+		  border-radius: 100px;
+		}
+		::-webkit-scrollbar-track:hover {
+		  background: #666666;
+		}
+		::-webkit-scrollbar-track:active {
+		  background: #5b5c64;
+		}
+		::-webkit-scrollbar-corner {
+		  background: transparent;
+		}		
+	</style>
+	</div>
+		
+	<!--to defer the js parsing-->
+	<!--to defer the js parsing-->
+
+<div class="section">
+	<div class="container">
+
+		<div class="row">
+			  <div class="col s12 center">
+				<span class="flow-text" style="font-family: Times New Roman, Times, serif;letter-spacing:2px;">HUMANS OF THAKURGAON</span> 
+			  </div>
+			  <div class="col s12 center">
+				<h4 class="" style="font-family: GillSans, Calibri, Trebuchet, sans-serif;">
+					<b>About Us</b>
+				</h4>
+			  </div>	
+			  
+			  <style>
+				.carousel .carousel-item {
+					width:250px !important;
+				}
+			  </style>
+			  <div class="col s12">
+				 <div class="carousel">
+					<a class="carousel-item" href="#one!"><img  src="images/about/rifat.jpg">
+					<center>
+						<b>A. H. M. Azimul Haque Rifat</b><br/>
+						<small style="font-family:MyAdorshoLipi;sans-serif !important;">"অন্তর মম বিকশিত কর, অন্তরতর হে"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#two!"><img  src="images/about/arefin.jpg">
+					<center>
+						<b>Ahasanul Haque Arefin</b><br/>
+						<small style="font-family:MyAdorshoLipi;sans-serif !important;">"যুদ্ধই জীবন,যুদ্ধই সার্বজনীন"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#three!"><img  src="images/about/tarif.jpg">
+					<center>
+						<b>Sunjidul Haque Tarif</b><br/>
+						<small>"You must be the change you wish to see in the world"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#four!"><img  src="images/about/arnob.jpg">
+					<center>
+						<b>Arnob Muqtadeer</b><br/>
+						<small>"You can't cross the sea merely by standing and staring at the water"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#five!"><img  src="images/about/suja.jpg">
+					<center>
+						<b>Shaker Ibn Kamal</b><br/>
+						<small>"A journey of thousand miles starts with a single step"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#six!"><img  src="images/about/meem.jpg">
+					<center>
+						<b>Mosaddek Bin Shorif</b><br/>
+						<small style="font-family:MyAdorshoLipi;sans-serif !important;">"না হারলে জেতা যায়না"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#seven!"><img  src="images/about/salafi.jpg">
+					<center>
+						<b>Sahinur Salafee</b><br/>
+						<small>"Think out of the box"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#eight!"><img  src="images/about/nur.jpg">
+					<center>
+						<b>Nur E Alam Siddique</b><br/>
+						<small>"প্রাণ খুলে বেঁচে থাক প্রতিটি আশরাফুল মাখলুকাত"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#nine!"><img  src="images/about/nasif.jpg">
+					<center>
+						<b>Nasif Anjum Kamal</b><br/>
+						<small>"Never hide in yourself" ✌</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#ten!"><img  src="images/about/kabbyo.jpg">
+					<center>
+						<b>Ahmedul Haque Kabbyo</b><br/>
+						<small>"Hardwork beats talent when talent does not work hard!"</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#eleven!"><img  src="images/about/jarin.gif">
+					<center>
+						<b>Jarin Tasnim</b><br/>
+						<small>Loading...</small>
+					</center>
+					</a>
+					<a class="carousel-item" href="#twelve!"><img  src="images/about/mahir.jpg">
+					<center>
+						<b>Mohammad Mahir Abrar</b><br/>
+						<small>"World is full of Nice People, If you can't find one Be One"</small>
+					</center>
+					</a>
+				  </div>
+				  <script>
+					$(document).ready(function(){
+						$('.carousel').carousel({
+						padding:4,
+						indicators: true,
+						});
+						window.setInterval(function(){$('.carousel').carousel('next')},5000)("Slow");
+						
+					});
+				  </script>
+			  </div>
+			  
+			  <div class="col s12 m12 center">
+				<a class="btn waves-effect waves-light blue" href="terms.php">Terms of Service</a>
+				<a class="btn waves-effect waves-light blue" href="privacy.php">Privacy Policy</a><br/><br/>
+			  </div><br/><hr/>
+			  <div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+					  <img class="activator" src="images/mob_tab_banner.jpg">
+					</div>
+					<div class="card-content">
+					  <span class="card-title activator grey-text text-darken-4">হিউম্যানস অব ঠাকুরগাঁও<i class="material-icons right">more_vert</i></span>
+					  
+					</div>
+					<div class="card-reveal">
+					  <span class="card-title grey-text text-darken-4">হিউম্যানস অব ঠাকুরগাঁও<i class="material-icons right">close</i></span>
+					  <p style="font-family:MyAdorshoLipi;sans-serif !important; text-align: justify !important;">
+						প্রতিটি সাধারণ জীবনের থাকে একেকটি অসাধারণ গল্প। মানুষগুলোর অসাধারণ গল্পগুলো বলার জন্যই এ আয়োজন। ছোট এই জেলায় বিভিন্ন প্রান্তের ভিন্ন ভিন্ন পেশাজীবী মানুষগুলোর নিজ মুখে গল্পগুলো শোনাব আমরা। <br/>
+						[আপনার পরিচিত এমনই কোন মানুষের গল্পগুলো সবাইকে জানাতে আমাদের সাথে যোগাযোগ করুন। আমরা চলে যাব আপনার পরিচিত সেই মানুষগুলোর কাছে। সবাইকে শোনাব তাদের গল্পগুলো।]<br/><br/>
+						"হিউম্যানস অব নিউইওর্ক" থেকে অনুপ্রাণিত।
+					  </p>
+					</div>
+				</div>
+			  </div>
+			  
+			  <div class="col s12 m6">
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+					  <img class="activator" src="images/mob_tab_banner.jpg">
+					</div>
+					<div class="card-content">
+					  <span class="card-title activator grey-text text-darken-4">Humans of Thakurgaon<i class="material-icons right">more_vert</i></span>
+					  
+					</div>
+					<div class="card-reveal">
+					  <span class="card-title grey-text text-darken-4">Humans of Thakurgaon<i class="material-icons right">close</i></span>
+					  <p style="font-family:MyLato;sans-serif !important; text-align: justify !important;">
+						Every individual has a unique story of each life. This is the platform to tell the extraordinary story behind every ordinary life. We will tell you stories of different types of people of various occupations in this little district.<br/>
+						[You can let us know about your familiar faces by messaging us. We will get to know them and everyone will listen to their story.]<br/><br/>
+						Inspired by "Humans of New York".
+					  </p>
+					</div>
+				</div>
+			  </div>
+			  <div class="col s12 m12 l12">
+			  	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			  	<!-- Humans of Thakurgaon Main Site | 1 -->
+			  	<ins class="adsbygoogle"
+			  	     style="display:block"
+			  	     data-ad-client="ca-pub-5553669904820916"
+			  	     data-ad-slot="4915143000"
+			  	     data-ad-format="auto"></ins>
+			  	<script>
+			  	(adsbygoogle = window.adsbygoogle || []).push({});
+			  	</script>
+			  </div>		  
+		</div>
+	</div>
+</div>
+
+
+				
+
+
+
+		
+		
+		<footer class="page-footer blue lighten-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12 hide-on-med-and-down">
+                <img class="col s4 responsive-img " style="padding:7px;" src="images/logo.png">
+              </div>
+			  
+              <div class="col l4 offset-l2 s12 center" style="">
+				<img class="responsive-img center hide-on-large-only" style="height:34%;width:57%;" src="images/logo.png">
+				<br/>
+			  <div class="divider hide-on-large-only"></div>
+                <span class="white-text" style="font-size:30px">Find Us</span><br/>
+                <a class="" href="https://www.facebook.com/humansofthakurgaon/"><span style="font-size:40px;padding:5px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></span></a>
+				<a class="" href="https://twitter.com/humansoftkg"><span style="font-size:40px;padding:5px;"><i class="fa fa-twitter-square" aria-hidden="true"></i></span></a>
+				<a class="" href="https://www.instagram.com/humansofthakurgaon/"><span style="font-size:40px;padding:5px;"><i class="fa fa-instagram" aria-hidden="true"></i></span></a>
+				<span class="grey-text text-lighten-4 hide-on-large-only">
+					<br/>Visits: 00046922<br/>
+					<a href="rss.php" class="grey-text text-lighten-4"><i class="fa fa-rss-square" aria-hidden="true"></i> RSS Feed</a>
+				</span>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright Reserved  
+            <span class="grey-text text-lighten-4 hide-on-med-and-down">
+				<b style="font-size:20px;">·</b> Visits: 00046922				<b style="font-size:20px;">·</b> <a href="rss.php" class="grey-text text-lighten-4"><i class="fa fa-rss-square" aria-hidden="true"></i> RSS Feed</a>
+				<b style="font-size:20px;">·</b> <a href="terms.php" class="grey-text text-lighten-4"><b>Terms of Service</b></a>
+				<b style="font-size:20px;">·</b> <a href="privacy.php" class="grey-text text-lighten-4"><b>Privacy Policy</b></a>
+			</span>
+			<span class="grey-text text-lighten-4 right" >
+				<iframe style="margin-top:17px;" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fhumansofthakurgaon%2F&width=75&layout=button_count&action=like&size=small&show_faces=true&share=false&height=21&appId=1654451871469307" width="75" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+			</span>
+            </div>
+          </div>
+        </footer>
+		
+
+
+</body>
+</html>
