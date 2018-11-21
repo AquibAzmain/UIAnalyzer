@@ -3,6 +3,8 @@ from html5parser import HTML5Parser
 import requests
 from bs4 import BeautifulSoup
 import json
+import csv
+
 website = "http://localhost/class8_1/sample.html"
 
 r = requests.get(website)
@@ -82,12 +84,16 @@ parser = EchoParser()
 # parser.feed('<p><em>error</p></em>')
 # parser.feed('weird < q <abc@example.com>\n')
 parser.feed(r.text)
+site_name = "http://localhost/class8_1/"
+
 tags = [tags[i:i + 3] for i in range(0, len(tags), 3)]
 print(tags)
 tag_json=[]
 for tag in tags:
     response_code=200
-    link = tag[1]
+    link = str(tag[1])
+    if "http://" not in link and "https://" not in link and not link.startswith('#'):  
+        link = site_name + link
 
     if tag[1]:
         try:
@@ -97,8 +103,8 @@ for tag in tags:
             response_code = 500
                 
     attr = {}
-    attr['Start Tag Location']=tag[0]
-    attr['End Tag Location']=tag[2]
+    attr['Start_Tag_Location']=tag[0]
+    attr['End_Tag_Location']=tag[2]
     attr['href']=tag[1]
     if not tag[1] or tag[1] is None:
         attr['Status'] = 'No link'
@@ -111,6 +117,31 @@ for tag in tags:
         attr['Suggestion']= 'None'
     tag_json.append(attr)
 
-for f in tag_json:
+anchor_list=[]
+attr = {}
+attr['Page'] = format(site_name)
+attr['Anchor_Tags'] = tag_json
+
+anchor_list.append(attr)
+
+for f in anchor_list:
     print(json.dumps(f, indent=2))    
 parser.close()
+
+#csv
+
+x = json.loads(json.dumps(anchor_list))
+
+f = csv.writer(open("anchor_tags.csv", "w", newline=''))
+
+f.writerow(["Page", "Start_Tag_Location", "End_Tag_Location", "Link", "Status", "Suggestion"])
+for x in x:
+    for anchor_tag in x['Anchor_Tags']:
+        #print(anchor_tag.get('Start_Tag_Location'))
+        f.writerow([x["Page"],
+                    anchor_tag['Start_Tag_Location'],
+                    anchor_tag['End_Tag_Location'],
+                    anchor_tag['href'],
+                    anchor_tag['Status'],
+                    anchor_tag['Suggestion'],
+                    ])

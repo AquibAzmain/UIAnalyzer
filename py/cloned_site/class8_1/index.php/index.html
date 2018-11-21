@@ -1,0 +1,62 @@
+
+<html>
+<style>
+form {
+    border: 3px solid grey;
+	margin: 0 auto;
+	width:50%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.aquibContainer {
+    padding: 26px;
+}
+
+.login{
+	text-align: center;
+}
+</style>
+
+
+<form action="login.php" method="POST">
+  <div class="aquibContainer">
+	<h3 class="login">Login</h3><hr/>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+	<label><i>Not registered yet? Click <a href="registration.php">Register</a></i></label>
+    <button type="submit">Login</button>
+  </div>
+
+</form>
+</html>
+
+

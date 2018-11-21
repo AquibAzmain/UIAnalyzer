@@ -1,0 +1,13 @@
+Page,Start_Tag_Location,End_Tag_Location,Link,Status,Suggestion
+http://localhost/class8_1/,55,55,registration.php,Ok,None
+http://localhost/class8_1/registration.php,55,55,registration.php,Ok,None
+http://localhost/class8_1/registration.php,59,59,index.php,Ok,None
+http://localhost/class8_1/registration.php,77,77,index.php,Ok,None
+http://localhost/class8_1/registration.php,95,95,index.php,Ok,None
+http://localhost/class8_1/registration.php,113,113,index.php,Ok,None
+http://localhost/class8_1/index.php,55,55,registration.php,Ok,None
+http://localhost/class8_1/index.php,59,59,index.php,Ok,None
+http://localhost/class8_1/index.php,77,77,index.php,Ok,None
+http://localhost/class8_1/index.php,95,95,index.php,Ok,None
+http://localhost/class8_1/index.php,113,113,index.php,Ok,None
+http://localhost/class8_1/index.php,55,55,registration.php,Ok,None

@@ -1,0 +1,4 @@
+Page,Height(px),Status,Suggestion
+http://localhost/class8_1/,768,Ok,None
+http://localhost/class8_1/registration.php,1734,Flash Navigation,Page height =< 1556 px
+http://localhost/class8_1/index.php,768,Ok,None

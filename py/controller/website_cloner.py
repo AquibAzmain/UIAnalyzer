@@ -122,6 +122,6 @@ class WebsiteCloner:
             print("---- {}\n".format(link))
 
 cloner = WebsiteCloner()
-cloner.crawl("http://www.humansofthakurgaon.org/" +
-             "/", "http://www.humansofthakurgaon.org/")
+cloner.crawl("http://localhost/class8_1/" +
+             "/", "http://localhost/class8_1/")
 cloner.print_result()             
