@@ -2,12 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-website = "http://www.humansofthakurgaon.org/"
+website = "http://localhost/class8_1/sample.html"
 
 r = requests.get(website)
 soup = BeautifulSoup(r.text, "html.parser")
-html_text = soup.prettify()
-html_text = html_text.splitlines()
+print(soup.prettify())
+#html_text = soup.prettify()
+# html_text = html_text.splitlines()
 def detectUnresElement(req):
     soup = BeautifulSoup(req.text, "html.parser")
     html_text = soup.prettify()
@@ -26,8 +27,7 @@ def detectUnresElement(req):
 
         # attr['name'] = str(field)
         attr['href'] = field.get('href')
-
-        if field.get('href') is None and r.status_code != 200:
+        if not field.get('href') or field.get('href') is None or r.status_code != 200:
             attr['smell_status'] = 'yes'
         else:
             attr['smell_status'] = 'no'
@@ -43,10 +43,13 @@ def detectUnresElement(req):
 
 def extract_location(html_text, href_text):
     for idx, val in enumerate(html_text):
+        target_href=0
         temp_arr = []
         temp = BeautifulSoup(val, "html.parser")
         temp_arr = temp.findAll('a')
         if len(temp_arr)>0 and temp_arr[0].get('href') == href_text:
-            return idx
+            target_href = idx
+            break
+    return target_href+1        
 
 detectUnresElement(r)
