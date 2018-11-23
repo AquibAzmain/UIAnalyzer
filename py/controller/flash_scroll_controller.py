@@ -17,7 +17,10 @@ class FlashScrollController:
         page_height = 0
         driver.get(page_link)
         time.sleep(1)
-        page_height= driver.execute_script("return document.body.scrollHeight;")
+        try:
+            page_height= driver.execute_script("return document.body.scrollHeight;")
+        except:
+            print("dhora khaichi")    
         return page_height
 
     def create_json(self, driver, page_link):
@@ -42,3 +45,7 @@ class FlashScrollController:
         f.writerow(["Page", "Height(px)", "Status", "Suggestion"])
         for x in x:
             f.writerow([x["Page"],x["Page_Height"],x["Status"],x["Suggestion"]])
+
+# flashScrollController = FlashScrollController()
+# driver = flashScrollController.initiate_chrome_driver()
+# print(flashScrollController.get_page_height(driver, "http://data.gov.bd/"))

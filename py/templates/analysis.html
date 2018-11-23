@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>UIAnalyzer</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <!-- <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff"> -->
+
+
+    <!-- Styles -->
+    <link href="assets/css/lib/weather-icons.css" rel="stylesheet" />
+    <link href="assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+
+    <link href="assets/css/lib/helper.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Your results:</h1>
+                                <h2>Analyzed website url: <a href="http://www.data.gov.bd/">http://www.data.gov.bd/</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">UIAnalyzer</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="stat-content">
+                                        <div class="stat-text">Pages Scanned</div>
+                                        <div class="stat-digit">45</div>
+                                    </div>
+                                    <!-- <div class="progress">
+                                        <div class="progress-bar progress-bar-success w-85" role="progressbar"
+                                            aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="stat-content">
+                                        <div class="stat-text">Average Page Height</div>
+                                        <div class="stat-digit"> 1856 px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="stat-content">
+                                        <div class="stat-text">Average DOM Load Time</div>
+                                        <div class="stat-digit"> 5.83 second</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="stat-widget-two">
+                                    <div class="stat-content">
+                                        <div class="stat-text">Average Smell Per Page</div>
+                                        <div class="stat-digit"> 4</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+
+                    <div class="row">
+                        <!-- column -->
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>UI Smell Summary</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Smell Name</th>
+                                                    <th>Found</th>
+                                                    <th>Report</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>No link, Broken link</td>
+                                                    <td><span>4%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Flash Scrolling</td>
+                                                    <td><span>22%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Long Request</td>
+                                                    <td><span>17%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Undescritive Element</td>
+                                                    <td><span>6%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Short Input</td>
+                                                    <td><span>10%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>No Input Validation</td>
+                                                    <td><span>24%</span></td>
+                                                    <td><button style="background-color: blueviolet;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- column -->
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="m-t-10">
+                                    <p>UI Smell Meter</p>
+                                    <h5>Elements scanned: 1245</h5>
+                                    <h5>Smell Found: 198</h5>
+                                </div>
+                                <div class="widget-card-circle pr m-t-40 m-b-40" id="info-circle-card">
+                                    <i style="font-size: 50px" class="ti-control-shuffle pa"></i>
+                                </div>
+                                <ul class="widget-line-list m-b-15">
+                                    <li class="border-right">84% <br><span class="color-success"><i class="ti-hand-point-up"></i>
+                                            Ok</span></li>
+                                    <li>16% <br><span class="color-danger"><i class="ti-hand-point-down"></i>Found
+                                            smell</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Screenshot: <b>http://www.data.gov.bd/</b></h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img style="max-height: 392px;" src="shot2.png" alt="Italian Trulli">
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>List of page visited </h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>URL</th>
+                                                    <th>DOM Load Time</th>
+                                                    <th>Page Height</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>http://data.gov.bd/</td>
+                                                    <td><span>4.5s</span></td>
+                                                    <td><span>1456 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>http://data.gov.bd/dataset/</td>
+                                                    <td><span>5.52s</span></td>
+                                                    <td><span>1956 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>http://data.gov.bd/stories</td>
+                                                    <td><span>4.24s</span></td>
+                                                    <td><span>1240 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>http://data.gov.bd/about-us</td>
+                                                    <td><span>5.7s</span></td>
+                                                    <td><span>1010 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>http://data.gov.bd/</td>
+                                                    <td><span>4.5s</span></td>
+                                                    <td><span>1456 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>http://data.gov.bd/search-type</td>
+                                                    <td><span>5.96s</span></td>
+                                                    <td><span>778 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>http://data.gov.bd/dataset/top?</td>
+                                                    <td><span>7.6s</span></td>
+                                                    <td><span>1920 px</span></td>
+                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p>Developed by <a href="https://github.com/AquibAzmain">Aquib Azmain</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="assets/js/lib/menubar/sidebar.js"></script>
+    <script src="assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+    <script src="assets/js/lib/bootstrap.min.js"></script>
+
+    <!-- bootstrap -->
+
+    <script src="assets/js/lib/circle-progress/circle-progress.min.js"></script>
+    <script src="assets/js/lib/circle-progress/circle-progress-init.js"></script>
+
+    <script src="assets/js/lib/morris-chart/raphael-min.js"></script>
+    <script src="assets/js/lib/morris-chart/morris.js"></script>
+    <script src="assets/js/lib/morris-chart/morris-init.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="assets/js/lib/flot-chart/jquery.flot.js"></script>
+    <script src="assets/js/lib/flot-chart/jquery.flot.resize.js"></script>
+    <script src="assets/js/lib/flot-chart/flot-chart-init.js"></script>
+    <!-- // flot-chart js -->
+
+
+    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.algeria.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.argentina.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.brazil.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.france.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.germany.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.greece.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.iran.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.iraq.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.russia.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.tunisia.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.europe.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.usa.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/vector.init.js"></script>
+
+    <script src="assets/js/lib/weather/jquery.simpleWeather.min.js"></script>
+    <script src="assets/js/lib/weather/weather-init.js"></script>
+    <script src="assets/js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/js/lib/owl-carousel/owl.carousel-init.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <!-- scripit init-->
+
+</body>
+
+</html>

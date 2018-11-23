@@ -1,0 +1,4 @@
+misleading link: https://extratorrent.ag
+form design:
+    https://mono.company/design-practice/the-10-commandments-of-good-form-design-on-the-web/
+    https://baymard.com/blog/form-field-usability-matching-user-expectations

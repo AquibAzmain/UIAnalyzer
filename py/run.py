@@ -12,6 +12,12 @@ def index():
     rendered = render_template('index.html')
     return rendered
 
+@app.route('/analysis')
+@app.route('/analysis.html')
+def analysis():
+    rendered = render_template('analysis.html')
+    return rendered
+
 @app.route('/<path:path>')
 def sendFiles(path):
     return send_from_directory('client/', path)

@@ -20,11 +20,11 @@ class AnchorTagController:
             if "http://" not in link and "https://" not in link and not link.startswith('#'):  
                 link = website + link
 
-            if tag[1]:
-                try:
-                    r = requests.get(link, verify=False)
-                except requests.exceptions.ConnectionError:
-                    response_code = 500
+                # if tag[1]:
+                #     try:
+                #         r = requests.get(link, verify=False)
+                #     except requests.exceptions.ConnectionError:
+                #         response_code = 500
                         
             attr = {}
             attr['Start_Tag_Location']=tag[0]

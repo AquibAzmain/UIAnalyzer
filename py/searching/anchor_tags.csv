@@ -1,6 +1,0 @@
-Page,Start_Tag_Location,End_Tag_Location,Link,Status,Suggestion
-http://localhost/class8_1/,205,205,https://www.w3schools.com/w3css/default.asp,Ok,None
-http://localhost/class8_1/,206,206,,No link,Add href to this anchor tag
-http://localhost/class8_1/,207,207,,No link,Add href to this anchor tag
-http://localhost/class8_1/,208,208,http://sasdasdasdasd.com/,Broken link,Provide a valid link
-http://localhost/class8_1/,209,209,sample2.html,Ok,None
