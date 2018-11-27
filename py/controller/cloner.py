@@ -5,14 +5,14 @@ import requests
 import shutil
 from bs4 import BeautifulSoup
 
-#import controller.unresponsiveElement as une
-# import crawler as crawler
+import controller.unresponsiveElement as une
+
 base_dir = os.getcwd()
 
 try:
     # site_name = sys.argv[1]
     # project_name = sys.argv[2]
-    website = "http://localhost/shworolipi/"
+    website = ""
     project_name = "test1" 
 except IndexError:
     print("Usage:\npython app.py www.example.com folder_name")
@@ -146,8 +146,7 @@ def crawl(link, site_name):
             except:
                 error_links.append(link.get("href"))
 
-        #a_list = une.detectUnresElement(r)
-        a_list=[]
+        a_list = une.detectUnresElement(r)
         attr = {}
         
         attr['page'] = format(link)
@@ -168,7 +167,3 @@ for link in visited_links:
 print("\n\n\nLink error\n")
 for link in error_links:
     print("---- {}\n".format(link))
-
-# crawler.website = "http://localhost/class8_1/sample.html"
-# crawler.crawl_site(crawler.website)
-# print(crawler.scanned_urls)
