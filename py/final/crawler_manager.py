@@ -11,7 +11,7 @@ class CrawlerManager:
     def crawl(self, link, site_name):
         if "http://" not in link and "https://" not in link and not link.startswith('#'):
             link = site_name + link
-        if site_name in link and link not in self.visited_links and not link.startswith('#') and len(self.visited_links)<20: 
+        if site_name in link and link not in self.visited_links and not link.startswith('#') and len(self.visited_links)<5: 
             #print("Working with : {}".format(link))
             try:
                 r = requests.get(link, verify=False)    

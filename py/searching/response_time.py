@@ -23,6 +23,7 @@ frontendPerformance = domComplete - responseStart
 
 print ("Back End: %s" % backendPerformance)
 print ("Front End: %s" % frontendPerformance)
+print (domComplete)
 
 driver.quit()
 

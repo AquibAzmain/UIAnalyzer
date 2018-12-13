@@ -27,8 +27,7 @@
 </head>
 
 <body>
-        {{key}}
-        {{pages}}
+    {{pages}}
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -37,7 +36,7 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Your results:</h1>
-                                <h2>Analyzed website url: <a href="{{key}}">{{key}}</a></h2>
+                                <h2>Analyzed website url: <a href="{{key}}" target="_blank">{{key}}</a></h2>
                             </div>
                         </div>
                     </div>
@@ -75,7 +74,7 @@
                                 <div class="stat-widget-two">
                                     <div class="stat-content">
                                         <div class="stat-text">Average Page Height</div>
-                                        <div class="stat-digit"> 1856 px</div>
+                                        <div class="stat-digit"> {{average_height}} px</div>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +84,7 @@
                                 <div class="stat-widget-two">
                                     <div class="stat-content">
                                         <div class="stat-text">Average DOM Load Time</div>
-                                        <div class="stat-digit"> 5.83 second</div>
+                                        <div class="stat-digit"> {{average_dom_load_time}} ms</div>
                                     </div>
                                 </div>
                             </div>
@@ -129,37 +128,50 @@
                                                     <td>1</td>
                                                     <td>No link, Broken link</td>
                                                     <td><span>4%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
+                                                            CSV</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td>Flash Scrolling</td>
                                                     <td><span>22%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i><a href="flash_scrolling_{{id}}.csv"
+                                                                download style="color:white">Download CSV</a></button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>Long Request</td>
                                                     <td><span>17%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
+                                                            CSV</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
                                                     <td>Undescritive Element</td>
                                                     <td><span>6%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
+                                                            CSV</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
                                                     <td>Short Input</td>
                                                     <td><span>10%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
+                                                            CSV</button></td>
                                                 </tr>
                                                 <tr>
                                                     <td>6</td>
                                                     <td>No Input Validation</td>
                                                     <td><span>24%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;" class="btn btn-sm"><i class="fa fa-download"></i> Download CSV</button></td>
+                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
+                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
+                                                            CSV</button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -204,7 +216,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <img style="max-height: 392px;" src="shot2.png" alt="Italian Trulli">
+                                <img style="max-height: 392px;" src="{{id}}.png" alt="screebshot">
                             </div>
                             <!-- /# card -->
                         </div>
@@ -235,113 +247,6 @@
                                                     <!-- <td><span class="badge badge-success">Done</span></td> -->
                                                 </tr>
                                                 {% endfor %}
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>http://data.gov.bd/dataset/</td>
-                                                    <td><span>5.52s</span></td>
-                                                    <td><span>1956 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>http://data.gov.bd/stories</td>
-                                                    <td><span>4.24s</span></td>
-                                                    <td><span>1240 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>http://data.gov.bd/about-us</td>
-                                                    <td><span>5.7s</span></td>
-                                                    <td><span>1010 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>http://data.gov.bd/</td>
-                                                    <td><span>4.5s</span></td>
-                                                    <td><span>1456 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td>http://data.gov.bd/search-type</td>
-                                                    <td><span>5.96s</span></td>
-                                                    <td><span>778 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-                                                <tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
-												<tr>
-                                                    <td>7</td>
-                                                    <td>http://data.gov.bd/dataset/top?</td>
-                                                    <td><span>7.6s</span></td>
-                                                    <td><span>1920 px</span></td>
-                                                    <!-- <td><span class="badge badge-success">Done</span></td> -->
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

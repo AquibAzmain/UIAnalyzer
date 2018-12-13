@@ -4,6 +4,7 @@ from flask import render_template, send_from_directory
 from flask import request
 #import controller.cloner as cloner
 import final.site_manager as site_manager
+import final.selenium_manager as selenium_manager
 app = Flask(__name__)
 
 @app.route("/")
@@ -41,10 +42,25 @@ def result():
         return render_template('error.html')
     else:
         SiteManager = site_manager.SiteManager()
-        all_links = SiteManager.get_links(site_url)      
-        return render_template('analysis.html', key=site_url, pages=all_links) 
+        temp_id = SiteManager.set_temp_id()
+
+        SeleniumManager = selenium_manager.SeleniumManager()
+        driver = SeleniumManager.initiate_chrome_driver()
+
+        all_links = SiteManager.get_links(site_url)
+
+        average_height = SiteManager.flashScroll(driver, all_links, temp_id)
+        average_dom_load_time = SiteManager.DOMLoadTime(driver, all_links)
+        SiteManager.take_screenshot(temp_id, site_url, driver)      
+        return render_template(
+            'analysis.html', 
+            key=site_url, 
+            pages=all_links, 
+            id=temp_id, 
+            average_height = average_height,
+            average_dom_load_time = average_dom_load_time) 
 
 if __name__ == '__main__':
     # from werkzeug.serving import run_simple
     # run_simple(host='0.0.0.0', 9000, app)
-    app.run(host='0.0.0.0', debug = True)
+    app.run(host='0.0.0.0', port=9000, debug = True)
