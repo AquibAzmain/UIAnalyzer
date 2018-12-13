@@ -27,6 +27,8 @@
 </head>
 
 <body>
+        {{key}}
+        {{pages}}
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -35,7 +37,7 @@
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Your results:</h1>
-                                <h2>Analyzed website url: <a href="http://www.data.gov.bd/">http://www.data.gov.bd/</a></h2>
+                                <h2>Analyzed website url: <a href="{{key}}">{{key}}</a></h2>
                             </div>
                         </div>
                     </div>
@@ -59,7 +61,7 @@
                                 <div class="stat-widget-two">
                                     <div class="stat-content">
                                         <div class="stat-text">Pages Scanned</div>
-                                        <div class="stat-digit">45</div>
+                                        <div class="stat-digit">{{pages|length}}</div>
                                     </div>
                                     <!-- <div class="progress">
                                         <div class="progress-bar progress-bar-success w-85" role="progressbar"
@@ -195,7 +197,7 @@
                         <div class="col-lg-6">
                             <div class="card nestable-cart">
                                 <div class="card-title">
-                                    <h4>Screenshot: <b>http://www.data.gov.bd/</b></h4>
+                                    <h4>Screenshot: <b>{{key}}</b></h4>
                                     <div class="card-title-right-icon">
                                         <ul>
 
@@ -224,13 +226,15 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                {% for item in pages %}
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>http://data.gov.bd/</td>
+                                                    <td>{{ item }}</td>
                                                     <td><span>4.5s</span></td>
                                                     <td><span>1456 px</span></td>
                                                     <!-- <td><span class="badge badge-success">Done</span></td> -->
                                                 </tr>
+                                                {% endfor %}
                                                 <tr>
                                                     <td>2</td>
                                                     <td>http://data.gov.bd/dataset/</td>

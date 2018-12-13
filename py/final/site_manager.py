@@ -16,9 +16,8 @@ class SiteManager:
              return True    
 
     def get_links(self, site):
-        print("hello")
-        print(site)
         CrawlerManager = crawler_manager.CrawlerManager()
+        CrawlerManager.reset()
         CrawlerManager.crawl(site , site)
         return CrawlerManager.visited_links
 

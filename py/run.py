@@ -40,11 +40,11 @@ def result():
     if not SiteManager.verify_site(site_url):
         return render_template('error.html')
     else:
-        all_links = SiteManager.get_links(site_url)
-        print(all_links)
-        print(site_url)       
-        return render_template('result.html', key=site_url, hello=all_links) 
+        SiteManager = site_manager.SiteManager()
+        all_links = SiteManager.get_links(site_url)      
+        return render_template('analysis.html', key=site_url, pages=all_links) 
 
 if __name__ == '__main__':
-    from werkzeug.serving import run_simple
-    run_simple('localhost', 9000, app)
+    # from werkzeug.serving import run_simple
+    # run_simple(host='0.0.0.0', 9000, app)
+    app.run(host='0.0.0.0', debug = True)

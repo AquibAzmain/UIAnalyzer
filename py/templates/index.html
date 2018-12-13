@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>UIAnalyzer</title>
+  <title>UIAnalyzer</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for this template -->
-    <link href="css/coming-soon.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/coming-soon.min.css" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body>
+<body>
+  <div class="overlay" id='divOverlay'></div>
+  <div id='loader' style="display: none" align="center">
+    <img src="assets/loader.gif" alt="loading" style="min-height:350px;">
+    <h3 class="mb-4" align="center" style="color:black"><i>Please wait. It may take a few minutes.</i></h3>
+  </div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id='div1'>
+    <source src="mp4/bg.mp4" type="video/mp4">
+  </video>
 
-    <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="mp4/bg.mp4" type="video/mp4">
-    </video>
-
-    <div class="masthead">
-      <div class="masthead-bg"></div>
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-12 my-auto">
-            <div class="masthead-content text-white py-5 py-md-0">
-              <h1 class="mb-3">UIAnalyzer</h1>
-              <p class="mb-5">It will find you the usability smells of a web application. Just enter the url..</p>
-              <div class="input-group input-group-newsletter">
-                <form class="form-inline" action="{{ url_for('result') }}" method="post">
-                  <input style="width:300px" type="text" name="search_key" class="form-control" placeholder="Enter website URL..." aria-label="Enter website URL..." aria-describedby="basic-addon">              
-                  <div class="input-group-append">
-                    <input class="btn btn-secondary" type="submit" value="Enter">
-                  </div>
+  <div class="masthead" id='div2'>
+    <div class="masthead-bg"></div>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+          <div class="masthead-content text-white py-5 py-md-0">
+            <h1 class="mb-3">UIAnalyzer</h1>
+            <p class="mb-5">It will find you the usability smells of a web application. Just enter the url..</p>
+            <div class="input-group input-group-newsletter">
+              <form class="form-inline" action="{{ url_for('result') }}" method="post" onsubmit="return validateForm()"
+                name="myForm">
+                <input style="width:300px" type="text" name="search_key" class="form-control" placeholder="Enter website URL..."
+                  aria-label="Enter website URL..." aria-describedby="basic-addon" required>
+                <div class="input-group-append">
+                  <input class="btn btn-secondary" type="submit" value="Enter">
+                </div>
               </form>
-              </div>
             </div>
+            <p class="mb-4" id="httpmissing" style="display:none"><i>URL must contain <b>http://</b> or <b>https://</b></i></p>
           </div>
         </div>
       </div>
     </div>
-<!--
-    <div class="social-icons">
-      <ul class="list-unstyled text-center mb-0">
-        <li class="list-unstyled-item">
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="list-unstyled-item">
-          <a href="#">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-        <li class="list-unstyled-item">
-          <a href="#">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
--->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </div>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/coming-soon.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </body>
+  <!-- Custom scripts for this template -->
+  <script src="js/coming-soon.min.js"></script>
+
+</body>
+<script>
+  function validateForm() {
+    var x = document.forms["myForm"]["search_key"].value;
+    if (x == "") {
+      return false;
+    }
+    else if (!x.startsWith('https://') && !x.startsWith('http://')) {
+      document.getElementById("httpmissing").style.display = "block";;
+      return false;
+    }
+    else {
+      document.getElementById("loader").style.display = "block";
+      document.getElementById("divOverlay").style.display = "none"
+      document.getElementById("div1").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+    }
+
+  }
+</script>
 
 </html>
