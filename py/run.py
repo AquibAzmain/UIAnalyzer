@@ -36,7 +36,6 @@ def result():
     site_url = request.form['search_key']
     if site_url.endswith("/"):
         site_url = site_url[:-1]
-    #cloner.crawl(site_url + "/", site_url)
     SiteManager = site_manager.SiteManager()
     if not SiteManager.verify_site(site_url):
         return render_template('error.html')
@@ -49,16 +48,37 @@ def result():
 
         all_links = SiteManager.get_links(site_url)
 
-        average_height = SiteManager.flashScroll(driver, all_links, temp_id)
-        average_dom_load_time = SiteManager.DOMLoadTime(driver, all_links)
-        SiteManager.take_screenshot(temp_id, site_url, driver)      
+        dom_height_object = {}
+        dom_height_object = SiteManager.DOMScroll(driver, all_links, temp_id)
+        average_height = dom_height_object["Page_Height"]
+        average_dom_load_time = dom_height_object["DOM_Load_Time"]
+        flash_scroll_parcent = dom_height_object["Smell_Parcent"]
+        page_object = dom_height_object["Page_Object"]
+
+        anchor_tag_object = {}
+        anchor_tag_object = SiteManager.anchor(all_links, temp_id)
+        broken_link_parcent = anchor_tag_object["Smell_Parcent"]
+
+        SiteManager.take_screenshot(temp_id, site_url, driver)
+        total_count = anchor_tag_object["Total_Count"]
+        smell_count = anchor_tag_object["Smell_Count"]
+        smell_parcent = int(smell_count*100/total_count)
+        ok_parcent = 100-smell_parcent
+        smell_per_page = int(smell_count/len(all_links))      
         return render_template(
             'analysis.html', 
             key=site_url, 
-            pages=all_links, 
+            pages=page_object, 
             id=temp_id, 
             average_height = average_height,
-            average_dom_load_time = average_dom_load_time) 
+            average_dom_load_time = average_dom_load_time,
+            flash_scroll_parcent = flash_scroll_parcent,
+            broken_link_parcent = broken_link_parcent,
+            total_count = total_count,
+            smell_count = smell_count,
+            ok_parcent = ok_parcent,
+            smell_parcent = smell_parcent,
+            smell_per_page = smell_per_page) 
 
 if __name__ == '__main__':
     # from werkzeug.serving import run_simple

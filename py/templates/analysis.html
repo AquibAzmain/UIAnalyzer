@@ -10,7 +10,7 @@
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
-    <!-- <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff"> -->
+    <link rel="icon" href="img/icon.png" type="image/png">
 
 
     <!-- Styles -->
@@ -90,8 +90,8 @@
                             <div class="card">
                                 <div class="stat-widget-two">
                                     <div class="stat-content">
-                                        <div class="stat-text">Average Smell Per Page</div>
-                                        <div class="stat-digit"> 4</div>
+                                        <div class="stat-text">Smell Per Page</div>
+                                        <div class="stat-digit"> {{smell_per_page}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -124,19 +124,18 @@
                                                 <tr>
                                                     <td>1</td>
                                                     <td>No link, Broken link</td>
-                                                    <td><span>4%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
-                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
-                                                            CSV</button></td>
+                                                    <td><span>{{broken_link_parcent}}%</span></td>
+                                                    <td><a href="anchor_tags_{{id}}.csv" class="btn btn-sm" download
+                                                            style="background-color: #243F61;  color:white; cursor: pointer;"><i
+                                                                class="fa fa-download"></i> Download CSV</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td>Flash Scrolling</td>
-                                                    <td><span>22%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
-                                                            class="btn btn-sm"><i class="fa fa-download"></i><a href="flash_scrolling_{{id}}.csv"
-                                                                download style="color:white"> Download CSV</a></button>
-                                                    </td>
+                                                    <td><span>{{flash_scroll_parcent}}%</span></td>
+                                                    <td><a href="flash_scrolling_{{id}}.csv" class="btn btn-sm" download
+                                                        style="background-color: #243F61;  color:white; cursor: pointer;"><i
+                                                            class="fa fa-download"></i> Download CSV</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
@@ -173,16 +172,16 @@
                             <div class="card text-center">
                                 <div class="m-t-10">
                                     <p>UI Smell Meter</p>
-                                    <h5>Elements scanned: 1245</h5>
-                                    <h5>Smell Found: 198</h5>
+                                    <h5>Elements scanned: {{total_count}}</h5>
+                                    <h5>Smell Found: {{smell_count}}</h5>
                                 </div>
                                 <div class="widget-card-circle pr m-t-18 m-b-18" id="info-circle-card">
                                     <i style="font-size: 50px" class="ti-control-shuffle pa"></i>
                                 </div>
                                 <ul class="widget-line-list m-b-15">
-                                    <li class="border-right">84% <br><span class="color-success"><i class="ti-hand-point-up"></i>
+                                    <li class="border-right">{{ok_parcent}}% <br><span class="color-success"><i class="ti-hand-point-up"></i>
                                             Ok</span></li>
-                                    <li>16% <br><span class="color-danger"><i class="ti-hand-point-down"></i>Found
+                                    <li>{{smell_parcent}}% <br><span class="color-danger"><i class="ti-hand-point-down"></i>Found
                                             smell</span></li>
                                 </ul>
                             </div>
@@ -222,17 +221,17 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>URL</th>
-                                                    <th>DOM Load Time</th>
-                                                    <th>Page Height</th>
+                                                    <th>DOM Load Time (ms)</th>
+                                                    <th>Page Height (px)</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {% for item in pages %}
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>{{ item }}</td>
-                                                    <td><span>4.5s</span></td>
-                                                    <td><span>1456 px</span></td>
+                                                    <td>{{loop.index}}</td>
+                                                    <td><a href="{{item.Page}}" target="_blank">{{item.Page}}</a></td>
+                                                    <td><span>{{item.DOM_Load_Time}}</span></td>
+                                                    <td><span>{{item.Page_Height}}</span></td>
                                                     <!-- <td><span class="badge badge-success">Done</span></td> -->
                                                 </tr>
                                                 {% endfor %}
@@ -259,7 +258,20 @@
     <script src="assets/js/lib/preloader/pace.min.js"></script>
     <script src="assets/js/lib/bootstrap.min.js"></script>
     <script src="assets/js/lib/circle-progress/circle-progress.min.js"></script>
-    <script src="assets/js/lib/circle-progress/circle-progress-init.js"></script>
+    <script>
+        var someJavaScriptVar = '{{ ok_parcent }}';
+        (function ($) {
+            "use strict";
+
+            $('#info-circle-card').circleProgress({
+                value: someJavaScriptVar / 100,
+                size: 100,
+                fill: {
+                    gradient: ["#a389d5"]
+                }
+            });
+        })(jQuery);
+    </script>
 
 </body>
 

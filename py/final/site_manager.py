@@ -1,8 +1,8 @@
 import requests
 import json
 import final.crawler_manager as crawler_manager
-import final.flash_scroll_controller as flash_scroll_controller
-import final.dom_controller as dom_controller
+import final.dom_scroll_controller as dom_scroll_controller
+import final.anchor_tag_controller as anchor_tag_controller
 import uuid
 class SiteManager:
 
@@ -24,27 +24,35 @@ class SiteManager:
         CrawlerManager.crawl(site , site)
         return CrawlerManager.visited_links
 
-    def flashScroll(self, driver, all_links, id):
-        merged_height_list = []
-        flashScrollController = flash_scroll_controller.FlashScrollController()
+    def DOMScroll(self, driver, all_links, id):
+        merged_list = []
+        data_object = {}
+        DOMScrollController = dom_scroll_controller.DOMScrollController()
         for link in all_links:
-            height_list = flashScrollController.create_json(driver, link)
-            merged_height_list+=height_list
-        flashScrollController.create_csv(merged_height_list, id)
-        return int(self.average_count(merged_height_list, "Page_Height"))
+            scroll_dom_list = DOMScrollController.create_json(driver, link)
+            merged_list+=scroll_dom_list
+        DOMScrollController.create_csv(merged_list, id)
+        data_object['Smell_Parcent'] = DOMScrollController.get_found_parcent(merged_list)
+        data_object['Page_Height'] = self.average_count(merged_list, "Page_Height")
+        data_object['DOM_Load_Time'] = self.average_count(merged_list, "DOM_Load_Time")
+        data_object['Page_Object'] = merged_list
+        return data_object   
 
-    def DOMLoadTime(self, driver, all_links):
-        merged_dom_list = []
-        domController = dom_controller.DOMController()
+    def anchor(self, all_links, id):
+        merged_list = []
+        anchor_list = []
+        data_object = {}
+        AnchorTagController = anchor_tag_controller.AnchorTagController()
         for link in all_links:
-            dom_list = domController.create_json(driver, link)
-            merged_dom_list+=dom_list
-        domController.create_result(merged_dom_list)
-        print (merged_dom_list)
-        return int(self.average_count(merged_dom_list, "DOM_Load_Time"))
+            anchor_list = AnchorTagController.create_json(link)
+            merged_list+=anchor_list
+        AnchorTagController.create_csv(merged_list, id)
+        data_object = AnchorTagController.get_found_parcent(merged_list)
+        merged_list = []
+        return data_object     
 
     def average_count(self, json_data, attribute):
-        return (sum(json_data[attribute] for json_data in json_data))/len(json_data)
+        return int((sum(json_data[attribute] for json_data in json_data))/len(json_data))
 
     def set_temp_id(self):
         return str(uuid.uuid4())
