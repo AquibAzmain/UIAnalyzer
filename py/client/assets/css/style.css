@@ -2655,7 +2655,7 @@ ul {
   float: right;
   font-weight: bold;
   line-height: normal;
-  height: 16px;
+  height: 6px;
   margin-top: 15px;
   text-align: center;
   text-decoration: none;
@@ -2792,14 +2792,15 @@ tbody tr td:last-child {
   margin-top: 3px;
 }
 .current-progressbar .progress {
-  height: 15px;
+  height: 36px;
   margin: 0;
   box-shadow: none;
 }
 .current-progressbar .progress-bar {
   box-shadow: 0;
-  line-height: 14px;
-  font-size: 11px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 20px;
   box-shadow: none;
 }
 .login-logo {
@@ -4241,7 +4242,7 @@ h6.h1 {
   background: #0095e1;
 }
 .widget-card-circle i {
-  font-size: 30px;
+  font-size: 50px;
   left: 0;
   line-height: 97px;
   right: 0;
