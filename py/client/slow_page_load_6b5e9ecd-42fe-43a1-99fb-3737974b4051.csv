@@ -1,0 +1,11 @@
+Page,DOM Load Time(ms),Status,Suggestion
+b'https://basis.org.bd',33891,Slow page load,DOM load time < 3000 ms
+b'https://basis.org.bd/index.php/site/about',469,Ok,None
+b'https://basis.org.bd/index.php/site/annualReport',1520,Ok,None
+b'https://basis.org.bd/index.php/site/currentNews',303,Ok,None
+b'https://basis.org.bd/index.php/site/mission',155,Ok,None
+b'https://basis.org.bd/index.php/site/vision',161,Ok,None
+b'https://basis.org.bd/index.php/site/coreValues',163,Ok,None
+b'https://basis.org.bd/index.php/site/aboutPage/31',5158,Slow page load,DOM load time < 3000 ms
+b'https://basis.org.bd/index.php/site/aboutPage/16',510,Ok,None
+b'https://basis.org.bd/index.php/site/aboutPage/17',176,Ok,None

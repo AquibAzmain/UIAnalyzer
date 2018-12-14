@@ -10,8 +10,8 @@ class DOMScrollController:
         data_object = {}
         page_height = 0
         frontendPerformance = 0
-        driver.get(page_link)
         #time.sleep(1)
+        driver.get(page_link)
         try:
             page_height= driver.execute_script("return document.body.scrollHeight;")
             responseStart = driver.execute_script("return window.performance.timing.responseStart")
@@ -19,7 +19,7 @@ class DOMScrollController:
             frontendPerformance = domComplete - responseStart
             data_object['Page_Height'] = page_height
             data_object['DOM_Load_Time'] = frontendPerformance
-        except:
+        except (TypeError,ReferenceError):
             print("dhora khaichi")
 
         return data_object

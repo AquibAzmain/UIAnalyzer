@@ -16,11 +16,11 @@ def index():
     return rendered
 
 
-@app.route('/analysis')
-@app.route('/analysis.html')
-def analysis():
-    rendered = render_template('analysis.html')
-    return rendered
+# @app.route('/analysis')
+# @app.route('/analysis.html')
+# def analysis():
+#     rendered = render_template('analysis.html')
+#     return rendered
 
 
 @app.route('/error')
@@ -70,13 +70,17 @@ def result():
             all_links, temp_id)
         undescriptive_element_parcent = undescriptive_element_object["Smell_Parcent"]
 
+        unformatted_element_object = {}
+        unformatted_element_object = SiteManager.unformatted(all_links, temp_id)
+        unformatted_element_parcent = unformatted_element_object["Smell_Parcent"]
+
         SiteManager.take_screenshot(temp_id, site_url, driver)
         total_count = anchor_tag_object["Total_Count"] + \
             undescriptive_element_object["Total_Count"] + \
-            dom_height_object["Total_Count"]
+            dom_height_object["Total_Count"] + unformatted_element_object["Total_Count"]
         smell_count = anchor_tag_object["Smell_Count"] + \
             undescriptive_element_object["Smell_Count"] + \
-            dom_height_object["Smell_Count"]
+            dom_height_object["Smell_Count"] + unformatted_element_object["Smell_Count"]
         smell_parcent = int(smell_count*100/total_count)
         ok_parcent = 100-smell_parcent
         smell_per_page = int(smell_count/len(all_links))
@@ -91,6 +95,7 @@ def result():
             slow_page_parcent=slow_page_parcent,
             broken_link_parcent=broken_link_parcent,
             undescriptive_element_parcent=undescriptive_element_parcent,
+            unformatted_element_parcent=unformatted_element_parcent,
             total_count=total_count,
             smell_count=smell_count,
             ok_parcent=ok_parcent,

@@ -9,38 +9,43 @@ class AnchorTagController:
     def create_json(self, website):
         tags = []
         tag_json = []
-        r = requests.get(website, verify=False)
-        parser = AnchorparserController()
-        parser._reset()
-        parser.feed(r.text)
-        tags = parser.tags
+        try:
+            r = requests.get(website, verify=False)
+            parser = AnchorparserController()
+            parser._reset()
+            parser.feed(r.text)
+            tags = parser.tags
 
-        tags = [tags[i:i + 3] for i in range(0, len(tags), 3)]
-        for tag in tags:
-            response_code = 200
-            link = str(tag[1])
-            if "http://" not in link and "https://" not in link and not link.startswith('#') and tag[1]:
-                link = website + link
-                try:
-                    r = requests.get(link, verify=False)
-                except requests.exceptions.ConnectionError:
-                    response_code = 500            
-            attr = {}
-            attr['Page'] = format(website)
-            attr['Start_Tag_Location'] = tag[0]
-            attr['End_Tag_Location'] = tag[2]
-            attr['href'] = tag[1]
-            if not tag[1] or tag[1] is None:
-                attr['Status'] = 'No link'
-                attr['Suggestion'] = 'Add href to this anchor tag'
-            elif response_code != 200:
-                attr['Status'] = 'Broken link'
-                attr['Suggestion'] = 'Provide a valid link'
-            else:
-                attr['Status'] = 'Ok'
-                attr['Suggestion'] = 'None'
-            tag_json.append(attr)
-        parser.close()
+            tags = [tags[i:i + 3] for i in range(0, len(tags), 3)]
+            for tag in tags:
+                response_code = 200
+                link = str(tag[1])
+                if "http://" not in link and "https://" not in link and not link.startswith('#') and tag[1]:
+                    link = website + link
+                    try:
+                        r = requests.get(link, verify=False)
+                    except requests.exceptions.ConnectionError and requests.exceptions.InvalidURL:
+                        response_code = 500            
+                attr = {}
+                attr['Page'] = format(website)
+                if len(tag)==3:
+                    attr['Start_Tag_Location'] = tag[0]
+                    attr['End_Tag_Location'] = tag[2]
+                    attr['href'] = tag[1]
+                if not tag[1] or tag[1] is None:
+                    attr['Status'] = 'No link'
+                    attr['Suggestion'] = 'Add href to this anchor tag'
+                elif response_code != 200:
+                    attr['Status'] = 'Broken link'
+                    attr['Suggestion'] = 'Provide a valid link'
+                else:
+                    attr['Status'] = 'Ok'
+                    attr['Suggestion'] = 'None'
+                tag_json.append(attr)
+            parser.close()    
+        except requests.exceptions.ConnectionError:
+            print("Connection Error")
+        
         return tag_json
 
     def create_csv(self, json_input, id):
@@ -54,7 +59,7 @@ class AnchorTagController:
             if not anchor_tag['href']:
                 href = ""
             else:
-                href = anchor_tag['href'].encode('ascii', 'ignore')
+                href = str(anchor_tag['href']).encode('ascii', 'ignore')
                 # print(anchor_tag.get('Start_Tag_Location'))
             f.writerow([anchor_tag["Page"].encode('ascii', 'ignore'),
                             anchor_tag['Start_Tag_Location'],

@@ -5,7 +5,10 @@ from bs4 import BeautifulSoup
 class UndescriptiveElementController:
     def undescriptive_finder(self, webpage):
         all_elements = []
-        r = requests.get(webpage, verify=False)
+        try:
+            r = requests.get(webpage, verify=False)
+        except (requests.exceptions.ConnectionError, requests.exceptions.InvalidURL, requests.exceptions.InvalidSchema, requests.exceptions.MissingSchema):
+            pass
         html_doc = r.text
         soup = BeautifulSoup(html_doc, 'html.parser')
         button_anchor = soup.find_all('a') + soup.find_all('button')

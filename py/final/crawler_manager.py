@@ -11,9 +11,10 @@ class CrawlerManager:
         self.error_links = []
 
     def crawl(self, link, site_name):
+        temp_link = site_name+'/'
         if "http://" not in link and "https://" not in link and not link.startswith('#'):
             link = site_name + link
-        if site_name in link and link not in self.visited_links and not link.startswith('#') and len(self.visited_links)<5: 
+        if site_name in link and temp_link!=link and link not in self.visited_links and not link.startswith('#') and len(self.visited_links)<10: 
             #print("Working with : {}".format(link))
             try:
                 r = requests.get(link, verify=False)    
@@ -34,7 +35,7 @@ class CrawlerManager:
                     self.error_links.append(link.get("href"))              
  
 # test = CrawlerManager()
-# test.crawl("http://localhost/class8_1/sample.html" , "http://localhost/class8_1/sample.html") 
+# test.crawl("http://data.gov.bd" , "http://data.gov.bd") 
 # print("Link crawled\n")
 # for link in test.visited_links:
 #     print("---- {}\n".format(link))

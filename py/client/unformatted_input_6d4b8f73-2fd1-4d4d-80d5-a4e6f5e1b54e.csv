@@ -1,0 +1,22 @@
+Page,Element,Unformatted Status,Suggestion
+b'http://data.gov.bd',"b'<input class=""form-control form-text"" id=""edit-search--2"" maxlength=""128"" name=""search"" placeholder=""search"" size=""30"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit--2"" name=""op"" type=""submit"" value=""""/>'",Ok,None
+b'http://data.gov.bd',"b'<input name=""form_build_id"" type=""hidden"" value=""form-6SF3yq3UXEf-ZfpTb2Cbt3VFWFO8iPaP4LW7b3UDdTE""/>'",Ok,None
+b'http://data.gov.bd',"b'<input name=""form_id"" type=""hidden"" value=""dkan_sitewide_dataset_search_form""/>'",Ok,None
+b'http://data.gov.bd/dataset',"b'<input class=""form-control form-text"" id=""edit-query"" maxlength=""128"" name=""query"" placeholder=""Search"" size=""60"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd/dataset',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit-dkan-datasets"" name="""" type=""submit"" value=""Apply""/>'",Ok,None
+b'http://data.gov.bd/dataset',"b'<input class=""form-submit btn btn-default"" id=""edit-reset"" name=""op"" type=""submit"" value=""Reset""/>'",Ok,None
+b'http://data.gov.bd/bn',"b'<input class=""form-control form-text"" id=""edit-search--2"" maxlength=""128"" name=""search"" placeholder=""search"" size=""30"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd/bn',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit--2"" name=""op"" type=""submit"" value=""""/>'",Ok,None
+b'http://data.gov.bd/bn',"b'<input name=""form_build_id"" type=""hidden"" value=""form-qLMd8Lq_7WV0JVUJep11NH5gO4M73DSuwCSglfP2Tj0""/>'",Ok,None
+b'http://data.gov.bd/bn',"b'<input name=""form_id"" type=""hidden"" value=""dkan_sitewide_dataset_search_form""/>'",Ok,None
+b'http://data.gov.bd/bn/search/type/dataset',"b'<input class=""form-control form-text"" id=""edit-query"" maxlength=""128"" name=""query"" placeholder=""Search"" size=""60"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd/bn/search/type/dataset',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit-dkan-datasets"" name="""" type=""submit"" value=""Apply""/>'",Ok,None
+b'http://data.gov.bd/bn/search/type/dataset',"b'<input class=""form-submit btn btn-default"" id=""edit-reset"" name=""op"" type=""submit"" value=""Reset""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset?topics=agriculture',"b'<input class=""form-control form-text"" id=""edit-query"" maxlength=""128"" name=""query"" placeholder=""Search"" size=""60"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset?topics=agriculture',"b'<input name=""topics"" type=""hidden"" value=""agriculture""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset?topics=agriculture',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit-dkan-datasets"" name="""" type=""submit"" value=""Apply""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset?topics=agriculture',"b'<input class=""form-submit btn btn-default"" id=""edit-reset"" name=""op"" type=""submit"" value=""Reset""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset',"b'<input class=""form-control form-text"" id=""edit-query"" maxlength=""128"" name=""query"" placeholder=""Search"" size=""60"" type=""text"" value=""""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset',"b'<input class=""form-submit btn btn-default btn-primary"" id=""edit-submit-dkan-datasets"" name="""" type=""submit"" value=""Apply""/>'",Ok,None
+b'http://data.gov.bd/bn/dataset',"b'<input class=""form-submit btn btn-default"" id=""edit-reset"" name=""op"" type=""submit"" value=""Reset""/>'",Ok,None
