@@ -19,12 +19,14 @@ class AnchorTagController:
         for tag in tags:
             response_code = 200
             link = str(tag[1])
-            if "http://" not in link and "https://" not in link and not link.startswith('#') and tag[1]:
+            if "http://" not in link and "https://" not in link and not link.startswith('#'):
                 link = website + link
+            if tag[1]:
                 try:
                     r = requests.get(link, verify=False)
                 except requests.exceptions.ConnectionError:
-                    response_code = 500            
+                    response_code = 500
+            print(response_code)            
             attr = {}
             attr['Page'] = format(website)
             attr['Start_Tag_Location'] = tag[0]

@@ -3,38 +3,69 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 class UndescritiveElementController:
-    def undescriptive_link_finder(self, webpage):
-        all_links = []
+    def undescriptive_element_finder(self, webpage):
+        all_elements = []
         r = requests.get(webpage, verify=False)
         html_doc = r.text
         soup = BeautifulSoup(html_doc, 'html.parser')
-        for link in soup.findAll('a'):          
-            print (link)
+        button_anchor = soup.find_all('a') + soup.find_all('button')
+        for element in button_anchor:          
             invalid_texts = ["clickhere","click","go","click!","link"]
-            undescriptive_link_status = False
-            link_text=""   
-            link_text = str(link.string).lower()
-            link_text = link_text.replace(" ", "")
+            undescriptive_element_status = False
+            element_text=""   
+            element_text = str(element.string).lower()
+            element_text = element_text.replace(" ", "")
             
-            if link_text in invalid_texts or not link.string:
-                undescriptive_link_status = True
+            if element_text in invalid_texts or not element.string:
+                undescriptive_element_status = True
             else:
-                undescriptive_link_status = False  
-            if link.contents:
-                for content in link.contents:
+                undescriptive_element_status = False  
+            if element.contents:
+                for content in element.contents:
                     soup2 = BeautifulSoup(str(content), 'html.parser')
                     if soup2.find('img') or soup2.find('i'):
-                        undescriptive_link_status = False
-            print(undescriptive_link_status)            
+                        undescriptive_element_status = False           
             
             attr = {}
             attr['Page'] = webpage
-            attr['Element'] = str(link)
-            attr['Undescriptive_link_status'] = undescriptive_link_status
-            all_links.append(attr)
-        for f in all_links:
+            attr['Element'] = str(element)
+            attr['Undescriptive_status'] = undescriptive_element_status
+            all_elements.append(attr)
+        for f in all_elements:
             print(json.dumps(f, indent=2))
-        return all_links
+
+    
+    # def undescriptive_button_finder(self, webpage):
+    #     all_elements = []
+    #     r = requests.get(webpage, verify=False)
+    #     html_doc = r.text
+    #     soup = BeautifulSoup(html_doc, 'html.parser')
+    #     for element in soup.findAll('button'):          
+    #         print (element)
+    #         invalid_texts = ["clickhere","click","go","click!","element"]
+    #         undescriptive_element_status = False
+    #         element_text=""   
+    #         element_text = str(element.string).lower()
+    #         element_text = element_text.replace(" ", "")
+            
+    #         if element_text in invalid_texts or not element.string:
+    #             undescriptive_element_status = True
+    #         else:
+    #             undescriptive_element_status = False  
+    #         if element.contents:
+    #             for content in element.contents:
+    #                 soup2 = BeautifulSoup(str(content), 'html.parser')
+    #                 if soup2.find('img') or soup2.find('i'):
+    #                     undescriptive_element_status = False
+    #         print(undescriptive_element_status)            
+            
+    #         attr = {}
+    #         attr['Page'] = webpage
+    #         attr['Element'] = str(element)
+    #         attr['Undescriptive_status'] = undescriptive_element_status
+    #         all_elements.append(attr)
+    #     for f in all_elements:
+    #         print(json.dumps(f, indent=2))
 
 a = UndescritiveElementController()
-a.undescriptive_link_finder('http://localhost/class8_1/sample.html')
+a.undescriptive_element_finder('http://localhost/class8_1/sample.html')

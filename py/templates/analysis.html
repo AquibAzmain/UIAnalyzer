@@ -139,19 +139,19 @@
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>Long Request</td>
-                                                    <td><span>17%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
-                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
-                                                            CSV</button></td>
+                                                    <td>Slow Page Load</td>
+                                                    <td><span>{{slow_page_parcent}}%</span></td>
+                                                    <td><a href="slow_page_load_{{id}}.csv" class="btn btn-sm" download
+                                                        style="background-color: #243F61;  color:white; cursor: pointer;"><i
+                                                            class="fa fa-download"></i> Download CSV</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
                                                     <td>Undescriptive Element</td>
-                                                    <td><span>6%</span></td>
-                                                    <td><button style="background-color: #243F61;  color:white; cursor: pointer;"
-                                                            class="btn btn-sm"><i class="fa fa-download"></i> Download
-                                                            CSV</button></td>
+                                                    <td><span>{{undescriptive_element_parcent}}%</span></td>
+                                                    <td><a href="undescriptive_element_{{id}}.csv" class="btn btn-sm" download
+                                                        style="background-color: #243F61;  color:white; cursor: pointer;"><i
+                                                            class="fa fa-download"></i> Download CSV</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
@@ -181,8 +181,7 @@
                                 <ul class="widget-line-list m-b-15">
                                     <li class="border-right">{{ok_parcent}}% <br><span class="color-success"><i class="ti-hand-point-up"></i>
                                             Ok</span></li>
-                                    <li>{{smell_parcent}}% <br><span class="color-danger"><i class="ti-hand-point-down"></i>Found
-                                            smell</span></li>
+                                    <li>{{smell_parcent}}% <br><span class="color-danger"><i class="ti-hand-point-down"></i>Smell</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -229,7 +228,7 @@
                                                 {% for item in pages %}
                                                 <tr>
                                                     <td>{{loop.index}}</td>
-                                                    <td><a href="{{item.Page}}" target="_blank">{{item.Page}}</a></td>
+                                                    <td style="max-width: 350px"><a href="{{item.Page}}" target="_blank">{{item.Page}}</a></td>
                                                     <td><span>{{item.DOM_Load_Time}}</span></td>
                                                     <td><span>{{item.Page_Height}}</span></td>
                                                     <!-- <td><span class="badge badge-success">Done</span></td> -->

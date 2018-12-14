@@ -3,6 +3,7 @@ import json
 import final.crawler_manager as crawler_manager
 import final.dom_scroll_controller as dom_scroll_controller
 import final.anchor_tag_controller as anchor_tag_controller
+import final.undescriptive_element_controller as undescriptive_element_controller
 import uuid
 class SiteManager:
 
@@ -31,11 +32,16 @@ class SiteManager:
         for link in all_links:
             scroll_dom_list = DOMScrollController.create_json(driver, link)
             merged_list+=scroll_dom_list
-        DOMScrollController.create_csv(merged_list, id)
-        data_object['Smell_Parcent'] = DOMScrollController.get_found_parcent(merged_list)
-        data_object['Page_Height'] = self.average_count(merged_list, "Page_Height")
-        data_object['DOM_Load_Time'] = self.average_count(merged_list, "DOM_Load_Time")
-        data_object['Page_Object'] = merged_list
+        if merged_list:    
+            DOMScrollController.create_csv(merged_list, id)
+            data_object['Smell_Parcent'] = DOMScrollController.get_found_parcent(merged_list, 'Status')["Smell_Parcent"]
+            data_object['Smell_Count'] = DOMScrollController.get_found_parcent(merged_list, 'Status')["Smell_Count"]
+            data_object['Total_Count'] = DOMScrollController.get_found_parcent(merged_list, 'Status')["Total_Count"]
+            data_object['Page_Height'] = self.average_count(merged_list, "Page_Height")
+            data_object['DOM_Load_Time'] = self.average_count(merged_list, "DOM_Load_Time")
+            data_object['Slow_Page_Count'] = DOMScrollController.get_found_parcent(merged_list, 'DOM_Load')["Smell_Count"]
+            data_object['Slow_Page_Parcent'] = DOMScrollController.get_found_parcent(merged_list, 'DOM_Load')["Smell_Parcent"]
+            data_object['Page_Object'] = merged_list
         return data_object   
 
     def anchor(self, all_links, id):
@@ -46,10 +52,23 @@ class SiteManager:
         for link in all_links:
             anchor_list = AnchorTagController.create_json(link)
             merged_list+=anchor_list
-        AnchorTagController.create_csv(merged_list, id)
-        data_object = AnchorTagController.get_found_parcent(merged_list)
-        merged_list = []
+        if merged_list:       
+            AnchorTagController.create_csv(merged_list, id)
+            data_object = AnchorTagController.get_found_parcent(merged_list)
         return data_object     
+
+    def undescriptive(self, all_links, id):
+        merged_list = []
+        element_list = []
+        data_object = {}
+        UndescriptiveElementController = undescriptive_element_controller.UndescriptiveElementController()
+        for link in all_links:
+            element_list = UndescriptiveElementController.undescriptive_finder(link)
+            merged_list+=element_list
+        if merged_list:       
+            UndescriptiveElementController.create_csv(merged_list, id)
+            data_object = UndescriptiveElementController.get_found_parcent(merged_list)
+        return data_object
 
     def average_count(self, json_data, attribute):
         return int((sum(json_data[attribute] for json_data in json_data))/len(json_data))
