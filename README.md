@@ -4,7 +4,7 @@
 
 ## UIAnalyzer
 
-UIAnalyzer is a web-based analytics tool that identifies and reports website UI smell. We can use these reports to get actionable insights and use them to take steps to improve our website.
+UIAnalyzer is a web-based analytics tool that identifies and reports website UI smell. You can use these reports to get actionable insights and use them to take steps to improve your website. This project is a part of an academic course (SPL3).
 
 ### Why should we use it? 
 UIAnalyzer helps you analyze front end code and performance of a web application and paint a complete picture of the user interface. In a nutshell, UIAnalyzer provides information about: 
@@ -13,6 +13,8 @@ UIAnalyzer helps you analyze front end code and performance of a web application
 - DOM load time
 - How many pages scanned
 - How many html  elements contain smell
+
+![Screenshot](/documents/demo.JPG)
 
 ### Contributor
 - [Aquib Azmain](https://github.com/AquibAzmain)
