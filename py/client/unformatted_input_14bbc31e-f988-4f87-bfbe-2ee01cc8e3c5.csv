@@ -1,0 +1,20 @@
+Page,Element,Unformatted Status,Suggestion
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""Page"" type=""hidden"" value=""PasswordSeparationSignIn""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name="""" type=""hidden"" value=""""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""gxf"" type=""hidden"" value=""AFoagUW6bIPYIQ1n29JDpXcKqpXNMUxFdg:1607611067102""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""continue"" type=""hidden"" value=""https://mail.google.com/mail/""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""service"" type=""hidden"" value=""mail""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""rm"" type=""hidden"" value=""false""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""ltmpl"" type=""hidden"" value=""default""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""scc"" type=""hidden"" value=""1""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""ss"" type=""hidden"" value=""1""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""osid"" type=""hidden"" value=""1""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""emr"" type=""hidden"" value=""1""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input id=""profile-information"" name=""ProfileInformation"" type=""hidden"" value=""""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input id=""session-state"" name=""SessionState"" type=""hidden"" value=""AEThLlxeNxI56DnF_bUV3hwG7eXENmsx3DM3INWjrEVTsQDEcYAEWbUNyZ_Nnd0_vW6gf5i8OFd9U7o3ta7DHyHpJsYHpd5kbXeBBA8w-t4F8Cpf9OarjXJrW2phvPnqLeEgjpA53-mo04ls2gs-SeA6fggMV5wZjZj2bil1apG15evubAu-4BJtjH0lcmyD--0cvKZxhsDi""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input name=""flowName"" type=""hidden"" value=""GlifWebSignIn""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input id=""_utf8"" name=""_utf8"" type=""hidden"" value="""">\n<input id=""bgresponse"" name=""bgresponse"" type=""hidden"" value=""js_disabled""/>\n<div class=""form-panel first valid"" id=""gaia_firstform"">\n<div class=""slide-out"">\n<div class=""input-wrapper focused"">\n<div id=""identifier-shown"">\n<div>\n<label class=""hidden-label"" for=""Email"">\n    </label>\n<input id=""Email"" name=""Email"" placeholder=""  "" spellcheck=""false"" type=""email"" value=""""/>\n<input class=""hidden"" id=""Passwd-hidden"" spellcheck=""false"" type=""password""/>\n</div>\n</div>\n<span class=""error-msg"" id=""errormsg_0_Email"" role=""alert""></span>\n</div>\n<input class=""rc-button rc-button-submit"" id=""next"" name=""signIn"" type=""submit"" value=""""/>\n<a class=""need-help"" href=""https://accounts.google.com/signin/usernamerecovery?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&amp;service=mail&amp;ss=1&amp;scc=1&amp;rm=false&amp;osid=1&amp;ltmpl=default&amp;hl=bn"">\n    \n  </a>\n</div>\n</div>\n</input>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input id=""bgresponse"" name=""bgresponse"" type=""hidden"" value=""js_disabled""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input id=""Email"" name=""Email"" placeholder=""  "" spellcheck=""false"" type=""email"" value=""""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input class=""hidden"" id=""Passwd-hidden"" spellcheck=""false"" type=""password""/>'",Ok,None
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',"b'<input class=""rc-button rc-button-submit"" id=""next"" name=""signIn"" type=""submit"" value=""""/>'",Ok,None

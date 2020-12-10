@@ -1,0 +1,3 @@
+Page,DOM Load Time(ms),Status,Suggestion
+b'https://aquibazmain.github.io',20770,Slow page load,DOM load time < 3000 ms
+b'https://aquibazmain.github.iomailto: aquibazmain123@gmail.com',657,Ok,None
